@@ -1,6 +1,7 @@
 #include <iostream>
 #include "character.h"
 #include "character.cpp"
+#include "tests.cpp"
 
 
 int main() {

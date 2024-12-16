@@ -2,6 +2,7 @@
 #define CHARACTER_H
 
 class Character {
+
 private:
     float speed_; // Vitesse actuelle du personnage
     static float max_speed_; // Vitesse maximale du personnage
@@ -29,7 +30,7 @@ public:
     ~Character();
 
     //Virtual WhatAmI
-    virtual std::string WhatAmI() const = 0;
+    //virtual std::string WhatAmI() const = 0;
     //Cela signifie que WhatAmI est une fonction virtuelle pure et qu'elle doit être implémentée dans toute classe dérivée de Character
     //La classe Character devient une classe abstraite parce qu'elle contient une fonction virtuelle pure (WhatAmI)
     //Toute classe qui hérite de Character devra définir la fonction WhatAmI pour être instanciée.

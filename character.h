@@ -8,12 +8,19 @@ private:
     float speed_; // Vitesse actuelle du personnage
     static float max_speed_; // Vitesse maximale du personnage
 
+  protected:
+      // Méthode protégée pour accéder à la vitesse (permet aux classes dérivées de l'utiliser)
+      void setSpeed(float newSpeed);
+
+      // Méthode protégée pour obtenir la vitesse actuelle (permet aux classes dérivées de l'utiliser)
+      float getSpeed() const;
+
 public:
     // Constructeur par défaut
     Character();
 
     // Fonction pour accélérer le personnage
-    void Accelerate();
+    virtual void Accelerate();
 
     // Fonction pour freiner le personnage
     void Break();

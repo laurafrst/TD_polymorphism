@@ -35,6 +35,16 @@ float Character::maxSpeed() {
     return max_speed_;
 }
 
+// Méthode protégée pour modifier la vitesse
+void Character::setSpeed(float newSpeed) {
+    speed_ = newSpeed;
+}
+
+// Méthode protégée pour obtenir la vitesse
+float Character::getSpeed() const {
+    return speed_;
+}
+
 // Destructeur
 Character::~Character() { //vide ici car pas de mémoire à libérer
 }

@@ -6,7 +6,10 @@
 class Mario : public Character {
 public:
     // Déclaration de la méthode WhatAmI() pour Mario
-    std::string WhatAmI() const override;  // Juste la déclaration ici
+    std::string WhatAmI() const override;
+
+    // Redéfinition de la méthode Accelerate() pour Mario
+    void Accelerate() override;
 };
 
 #endif // MARIO_H

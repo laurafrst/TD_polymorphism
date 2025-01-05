@@ -21,7 +21,7 @@ void Character::Break() {
 }
 
 // Fonction d'accès en ligne pour obtenir la vitesse actuelle
-auto Character::speed() const {
+auto Character::speed() const -> decltype(speed_) {
     return speed_;
 }
 

@@ -2,51 +2,48 @@
 #include "mario.h"
 #include "yoshi.h"
 
-
 void testCharacter(Character &character) {
-    // Afficher l'identité du personnage
-    std::cout << "Identité du personnage: " << character.WhatAmI() << std::endl;
+    // Display the character's identity
+    std::cout << "Character identity: " << character.WhatAmI() << std::endl;
 
-    // Tester l'accélération
-    auto speed_initiale = character.speed();  // Le type est automatiquement déduit ici
-    std::cout << "Vitesse initiale: " << speed_initiale << std::endl;
+    // Test acceleration
+    auto initial_speed = character.speed();  // Type is automatically inferred here
+    std::cout << "Initial speed: " << initial_speed << std::endl;
     character.Accelerate();
-    std::cout << "Vitesse après accélération: " << character.speed() << std::endl;
+    std::cout << "Speed after acceleration: " << character.speed() << std::endl;
 
-    // Tester la décélération
+    // Test deceleration
     character.Break();
-    std::cout << "Vitesse après freinage: " << character.speed() << std::endl;
+    std::cout << "Speed after braking: " << character.speed() << std::endl;
 
-    // Tester si la vitesse atteint la vitesse maximale
+    // Test if the speed reaches the maximum speed
     character.Accelerate();
     character.Accelerate();
-    std::cout << "Vitesse après plusieurs accélérations: " << character.speed() << std::endl;
+    std::cout << "Speed after several accelerations: " << character.speed() << std::endl;
 
-    // Tester si la vitesse ne descend pas sous zéro
+    // Test if the speed doesn't go below zero
     character.Break();
     character.Break();
-    std::cout << "Vitesse après plusieurs freinages: " << character.speed() << std::endl;
+    std::cout << "Speed after several brake actions: " << character.speed() << std::endl;
 }
 
 int main() {
-    // Créer un objet Mario
+    // Create a Mario object
     Mario mario;
-
-    std::cout << "Test de Mario:" << std::endl;
+    std::cout << "Mario's test:" << std::endl;
     testCharacter(mario);
     std::cout << "------------------------------------" << std::endl;
 
-    // Créer un objet Yoshi
+    // Create a Yoshi object
     Yoshi yoshi;
-
-    std::cout << "Test de Yoshi:" << std::endl;
+    std::cout << "Yoshi's test:" << std::endl;
     testCharacter(yoshi);
     std::cout << "------------------------------------" << std::endl;
 
-    // Tester la vitesse maximale
-    std::cout << "Vitesse maximale initiale: " << Character::maxSpeed() << std::endl;
+    // Test the maximum speed
+    std::cout << "Initial maximum speed: " << Character::maxSpeed() << std::endl;
     Character::setMaxSpeed(20);
-    std::cout << "Nouvelle vitesse maximale: " << Character::maxSpeed() << std::endl;
+    std::cout << "New maximum speed: " << Character::maxSpeed() << std::endl;
 
     return 0;
 }

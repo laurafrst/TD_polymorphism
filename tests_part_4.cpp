@@ -3,25 +3,25 @@
 #include "yoshi.h"
 
 void testAcceleration(Character& character) {
-    // Afficher la vitesse initiale
-    std::cout << "Vitesse initiale de " << character.WhatAmI() << ": " << character.speed() << std::endl;
+    // Display the initial speed
+    std::cout << "Initial speed of " << character.WhatAmI() << ": " << character.speed() << std::endl;
 
-    // Accélérer 5 fois
+    // Accelerate 5 times
     for (int i = 0; i < 5; ++i) {
         character.Accelerate();
-        std::cout << "Vitesse après accélération " << i + 1 << ": " << character.speed() << std::endl;
+        std::cout << "Speed after acceleration " << i + 1 << ": " << character.speed() << std::endl;
     }
 }
 
 int main() {
-    // Création d'objets Mario et Yoshi
+    // Create Mario and Yoshi objects
     Mario mario;
     Yoshi yoshi;
 
-    std::cout << "Test de l'accélération de Mario:" << std::endl;
+    std::cout << "Mario's acceleration test:" << std::endl;
     testAcceleration(mario);
 
-    std::cout << "\nTest de l'accélération de Yoshi:" << std::endl;
+    std::cout << "\nYoshi's acceleration test:" << std::endl;
     testAcceleration(yoshi);
 
     return 0;

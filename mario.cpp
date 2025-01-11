@@ -1,13 +1,13 @@
 #include "mario.h"
 
-// Implémentation de la méthode WhatAmI() pour Mario
+// Implementation of the WhatAmI() method for Mario
 std::string Mario::WhatAmI() const {
     return "Mario";
 }
 
-// Redéfinition de la méthode Accelerate() pour Mario
+// Redefinition of the Accelerate() method for Mario
 void Mario::Accelerate() {
     if (getSpeed() < maxSpeed()) {
-        setSpeed(getSpeed() + 1); // Mario accélère plus lentement, avec un incrément de 1
+        setSpeed(getSpeed() + 1); // Mario accelerates slower, with an increment of 1
     }
 }

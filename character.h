@@ -5,44 +5,44 @@
 class Character {
 
 private:
-    float speed_; // Vitesse actuelle du personnage
-    static float max_speed_; // Vitesse maximale du personnage
+    float speed_; // Current speed of the character
+    static float max_speed_; // Maximum speed of the character
 
 protected:
-      // Méthode protégée pour accéder à la vitesse (permet aux classes dérivées de l'utiliser)
+      // Protected method to set the speed (allows derived classes to use it)
       void setSpeed(float newSpeed);
 
-      // Méthode protégée pour obtenir la vitesse actuelle (permet aux classes dérivées de l'utiliser)
+      // Protected method to get the current speed (allows derived classes to use it)
       float getSpeed() const;
 
 public:
-    // Constructeur par défaut
+    // Default constructor
     Character();
 
-    // Fonction pour accélérer le personnage
+    // Method to accelerate the character
     virtual void Accelerate();
 
-    // Fonction pour freiner le personnage
+    // Method to brake the character
     void Break();
 
-    // Fonction d'accès en ligne pour obtenir la vitesse actuelle (int ou float, défini par auto)
+    // Inline accessor method to get the current speed (int or float, determined by auto)
     auto speed() const -> decltype(speed_);
 
-    // Fonction statique pour définir la vitesse maximale
+    // Static method to set the maximum speed
     static void setMaxSpeed(float max_speed);
 
-    // Fonction statique pour obtenir la vitesse maximale
+    // Static method to get the maximum speed
     static float maxSpeed();
 
-    //Destructor
+    // Destructor
     virtual ~Character() = default;
 
-    //Virtual WhatAmI
+    // Virtual WhatAmI method
     virtual std::string WhatAmI() const = 0;
-    //Cela signifie que WhatAmI est une fonction virtuelle pure et qu'elle doit être implémentée dans toute classe dérivée de Character
-    //La classe Character devient une classe abstraite parce qu'elle contient une fonction virtuelle pure (WhatAmI)
-    //Toute classe qui hérite de Character devra définir la fonction WhatAmI pour être instanciée.
-    //Sinon, la classe dérivée sera également abstraite et ne pourra pas être instanciée.
+    // This means WhatAmI is a pure virtual function and must be implemented in any derived class of Character
+    // The Character class becomes an abstract class because it contains a pure virtual function (WhatAmI)
+    // Any class inheriting from Character must define the WhatAmI function to be instantiated.
+    // Otherwise, the derived class will also be abstract and cannot be instantiated.
 };
 
 #endif // CHARACTER_H

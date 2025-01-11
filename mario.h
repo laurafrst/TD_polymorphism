@@ -5,10 +5,10 @@
 
 class Mario : public Character {
 public:
-    // Déclaration de la méthode WhatAmI() pour Mario
+    // Declaration of the WhatAmI() method for Mario
     std::string WhatAmI() const override;
 
-    // Redéfinition de la méthode Accelerate() pour Mario
+    // Redefinition of the Accelerate() method for Mario
     void Accelerate() override;
 };
 

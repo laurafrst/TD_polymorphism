@@ -1,46 +1,46 @@
 #include "character.h"
 
-// Initialisation de la vitesse maximale
+// Initialization of the maximum speed
 float Character::max_speed_ = 10;
 
-// Constructeur par défaut
+// Default constructor
 Character::Character() : speed_(0) {}
 
-// Fonction pour accélérer le personnage
+// Method to accelerate the character
 void Character::Accelerate() {
     if (speed_ < max_speed_) {
         speed_ += 1;
     }
 }
 
-// Fonction pour ralentir le personnage
+// Method to brake the character
 void Character::Break() {
     if (speed_ > 0) {
         speed_ -= 1;
     }
 }
 
-// Fonction d'accès en ligne pour obtenir la vitesse actuelle
+// Inline accessor method to get the current speed
 auto Character::speed() const -> decltype(speed_) {
     return speed_;
 }
 
-// Fonction statique pour définir la vitesse maximale
+// Static method to set the maximum speed
 void Character::setMaxSpeed(float max_speed) {
     max_speed_ = max_speed;
 }
 
-// Fonction statique pour obtenir la vitesse maximale
+// Static method to get the maximum speed
 float Character::maxSpeed() {
     return max_speed_;
 }
 
-// Méthode protégée pour modifier la vitesse
+// Protected method to set the speed
 void Character::setSpeed(float newSpeed) {
     speed_ = newSpeed;
 }
 
-// Méthode protégée pour obtenir la vitesse
+// Protected method to get the speed
 float Character::getSpeed() const {
     return speed_;
 }

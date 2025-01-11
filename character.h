@@ -8,7 +8,7 @@ private:
     float speed_; // Vitesse actuelle du personnage
     static float max_speed_; // Vitesse maximale du personnage
 
-  protected:
+protected:
       // Méthode protégée pour accéder à la vitesse (permet aux classes dérivées de l'utiliser)
       void setSpeed(float newSpeed);
 
@@ -35,7 +35,7 @@ public:
     static float maxSpeed();
 
     //Destructor
-    ~Character();
+    virtual ~Character() = default;
 
     //Virtual WhatAmI
     virtual std::string WhatAmI() const = 0;

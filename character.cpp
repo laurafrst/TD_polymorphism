@@ -44,7 +44,3 @@ void Character::setSpeed(float newSpeed) {
 float Character::getSpeed() const {
     return speed_;
 }
-
-// Destructeur
-Character::~Character() { //vide ici car pas de mémoire à libérer
-}

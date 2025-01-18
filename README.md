@@ -15,7 +15,7 @@ The project follows a structured approach:
 ---
 
 ## **1) Implementing the `Character` class**  
-We first implemented a base class `Character` with:  
+I first implemented a base class `Character` with:  
 - A **private data member** `float speed_` representing the current speed.  
 - A **static data member** `float max_speed_`, initialized to `10.0`.  
 - A **default constructor** initializing `speed_` to `0.0`.  
@@ -24,12 +24,12 @@ We first implemented a base class `Character` with:
 - A **getter function** `auto speed() const -> decltype(speed_);` returning the speed.  
 - A **destructor** to manage cleanup.  
 
-We also created **unit tests** to verify basic functionalities of acceleration, braking, and speed retrieval.  
+I also created **unit tests** to verify basic functionalities of acceleration, braking, and speed retrieval.  
 
 ---
 
 ## **2) Adding a Pure Virtual Function (`WhatAmI()`)**  
-To enforce polymorphism, we added the following pure virtual function in `Character`:  
+To enforce polymorphism, I added the following pure virtual function in `Character`:  
 
 ```cpp
 virtual std::string WhatAmI() const = 0;
@@ -69,7 +69,7 @@ virtual std::string WhatAmI() const = 0;
      delete c1;
      delete c2;
      ```
-   - Similarly, we can use **references** to achieve the same behavior:  
+   - Similarly, I can use **references** to achieve the same behavior:  
      ```cpp
      void DisplayCharacterType(const Character& character) {
          std::cout << character.WhatAmI() << std::endl;
@@ -83,7 +83,7 @@ virtual std::string WhatAmI() const = 0;
      ```
 
 4. **Impact on STL Containers**  
-   - Thanks to polymorphism, we can store multiple types of `Character` objects in a single STL container (e.g., `std::vector<Character*>`).  
+   - Thanks to polymorphism, I can store multiple types of `Character` objects in a single STL container (e.g., `std::vector<Character*>`).  
    - This allows for dynamic behavior within loops and algorithms.  
 
 ### **Key Benefits of Using a Pure Virtual Function**  
@@ -94,7 +94,7 @@ virtual std::string WhatAmI() const = 0;
 ---
 
 ## **3) Extending `Character`: Implementing `Mario` and `Yoshi`**  
-After making `Character` abstract, we implemented `Mario` and `Yoshi`, both inheriting from `Character`.  
+After making `Character` abstract, I implemented `Mario` and `Yoshi`, both inheriting from `Character`.  
 Each subclass overrides `WhatAmI()` to return a specific string (`"Mario"` or `"Yoshi"`).  
 
 ```cpp
@@ -113,7 +113,7 @@ A similar approach was used for `Yoshi`.
 ---
 
 ## **4) Overriding `Accelerate()`**  
-To reflect that **Yoshis are faster than Marios**, we **overrode `Accelerate()`** in `Yoshi` to make it accelerate twice as fast:  
+To reflect that **Yoshis are faster than Marios**, I **overrode `Accelerate()`** in `Yoshi` to make it accelerate twice faster:  
 
 ```cpp
 void Yoshi::Accelerate() {
@@ -126,12 +126,12 @@ void Yoshi::Accelerate() {
 Mario, on the other hand, retains the default acceleration (`+1` per call).  
 
 ### **Testing the Acceleration Difference**  
-We created a test file `tests_4.cpp` to confirm that **Yoshi accelerates faster than Mario** using STL containers and iteration.  
+I created a test file `tests_4.cpp` to confirm that **Yoshi accelerates faster than Mario** using STL containers and iteration.  
 
 ---
 
 ## **5) Let the Race Begin: Using STL Containers**  
-To demonstrate **polymorphism with STL**, we stored `Mario` and `Yoshi` objects in a `std::vector<Character*>` and looped over them using iterators and range-based for loops.  
+To demonstrate **polymorphism with STL**, I stored `Mario` and `Yoshi` objects in a `std::vector<Character*>` and looped over them using iterators and range-based for loops.  
 
 ```cpp
 std::vector<Character*> racers;
@@ -152,16 +152,6 @@ Each Yoshi has a **dynamic memory-allocated crest count**, requiring careful mem
 
 ---
 
-## **Final Deliverables & Submission**  
-After implementing all features and validating correctness with tests, the repository was archived using:  
-```sh
-git clone --bare <path/.git> <lastname>.git
-tar -czf polymorphism_<lastname>.tgz <lastname>.git
-```
-The file was then uploaded to **FileSender Renater** as per the assignment instructions.
-
----
-
 ## **Conclusion**  
-This project provided hands-on experience with **polymorphism in C++**, covering abstract classes, virtual functions, function overriding, dynamic memory management, and STL integration. By enforcing a structured inheritance hierarchy, we successfully built a flexible and extensible character system that allows for dynamic behavior at runtime.
+This project provided hands-on experience with **polymorphism in C++**, covering abstract classes, virtual functions, function overriding, dynamic memory management, and STL integration. By enforcing a structured inheritance hierarchy, we can built a flexible and extensible character system that allows for dynamic behavior at runtime.
 

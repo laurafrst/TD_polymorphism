@@ -143,7 +143,7 @@ for (Character* racer : racers) {
     std::cout << racer->WhatAmI() << " speed: " << racer->speed() << std::endl;
 }
 ```
-This showed that **Yoshis accelerate faster than Marios**, confirming the correct override of `Accelerate()`.
+The main.cpp file showed that **Yoshis accelerate faster than Marios**, confirming the correct override of `Accelerate()`.
 
 ---
 

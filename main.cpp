@@ -16,23 +16,23 @@ int main() {
     // PART 5
     std::cout << "Let the race begin!" << std::endl;
     // Creating the STL container (vector here) to store characters
-    std::vector<Character*> characters;
+    std::vector<Character*> racers;
     // Adding Mario and Yoshi to the container
-    characters.push_back(new Mario());
-    characters.push_back(new Yoshi(3)); // Yoshi with 3 crests
+    racers.push_back(new Mario());
+    racers.push_back(new Yoshi(3)); // Yoshi with 3 crests
     // Using an iterator to make the characters accelerate
     int i = 0;
-    for (const auto& D : characters) {
-        std::cout << "The driver " << i << " is " << D->WhatAmI()
+    for (const auto& D : racers) {
+        std::cout << "The racer " << i << " is " << D->WhatAmI()
                   << ". He has a speed of: " << D->speed() << std::endl;
         D->Accelerate();
-        std::cout << "The driver " << i << " has accelerated. His new speed is: "
+        std::cout << "The racer " << i << " has accelerated. His new speed is: "
                   << D->speed() << std::endl;
         i += 1;
     }
 
     // Freeing the dynamically allocated memory
-    for (auto D : characters) {
+    for (auto D : racers) {
         delete D;
     }
 

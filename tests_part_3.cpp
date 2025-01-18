@@ -14,7 +14,7 @@ void testCharacter(Character &character) {
 
     // Test deceleration
     character.Break();
-    std::cout << "Speed after braking: " << character.speed() << std::endl;
+    std::cout << "Speed after breaking: " << character.speed() << std::endl;
 
     // Test if the speed reaches the maximum speed
     character.Accelerate();
@@ -24,7 +24,7 @@ void testCharacter(Character &character) {
     // Test if the speed doesn't go below zero
     character.Break();
     character.Break();
-    std::cout << "Speed after several brake actions: " << character.speed() << std::endl;
+    std::cout << "Speed after several break actions: " << character.speed() << std::endl;
 }
 
 int main() {

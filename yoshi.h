@@ -7,6 +7,7 @@
 class Yoshi : public Character {
 public:
   // Constructor
+  Yoshi() : Yoshi(1) {}
   Yoshi(int crests);
 
   // Destructor to free the memory allocated for numCrests_
